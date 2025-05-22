@@ -10,7 +10,7 @@ public class UrlGenerator {
     public static String generateJumpUrl(String authCode, String redirectLink) {
         try {
             String encodedRedirect = URLEncoder.encode(redirectLink, StandardCharsets.UTF_8.name())
-                    .replace("+", "%20");  // 将+替换为%20保持URL规范[7](@ref)
+                    .replace("+", "%20");  // 将+替换为%20保持URL规范
 
             return String.format("https://meeting.tencent.com?sso_auth_code=%s&redirect_link=%s",
                     authCode, encodedRedirect);
